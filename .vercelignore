@@ -1,0 +1,11 @@
+worker
+reports
+test
+scripts
+.github
+.venv
+.env
+.env.*
+*.log
+README.md
+server.js

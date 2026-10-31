@@ -1,0 +1,23 @@
+name: Check restored flow
+on:
+  push:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --no-audit --no-fund
+      - run: npm test
+      - run: npm run check
+      - run: python scripts/check-restoration.py
+      - run: python -m py_compile scripts/test-control.py scripts/test-all-uids.py scripts/summarize-all-uids.py worker/app.py
+      - run: pip install -r worker/requirements.lock.txt
+      - run: python -m unittest discover -s worker -p test_browser_patch.py

@@ -1,0 +1,10 @@
+{
+  "source": "ff-session-api-browser-patch.zip",
+  "historical_success_uid": "11111119",
+  "historical_success_region": "US",
+  "files": {
+    "ff_api.py": "9bfbbe8ea443296b7f7674ef7af99f54dbe9133dac45b6aea3f32fe2017cc44f",
+    "data_dome.py": "b6b5c3e5a86e4a820978cd486e3ab16895b4558c43c2e550fbbf57d1d257daf4",
+    "requirements.lock.txt": "30565d1f8e92e6e2ccc9c701489af3bd244902f2114c19e19fc5b6665543affd"
+  }
+}
